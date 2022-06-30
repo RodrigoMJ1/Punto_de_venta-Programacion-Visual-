@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!––Se manda a llamar a bootstrap, hoja de estilos(css) y la funcionalidad(js)––>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <title>Ventas</title>
+    </head>
+<body>
+    <!––Encabezado de la pagina con logos)––>
+    <div  class="container">
+
+        <div class="row">
+            <div class="row">
+                <div class="col-md-4 mt-5 mb-4">
+                    <img src="https://brandeame.es/wp-content/uploads/2017/05/Nike-Logo-PNG-Pic.png" width = "100" alt="logo">
+                </div>
+                <div class="col-md-4 mt-2 mb-4">
+                    <div class="col-md-12 mt-3">
+                    <h1><p class="text-center fw-bold">Ventas</p></h1>
+                </div>
+                </div>
+                <div class="col-md-4 mt-4 mb-4">
+                    <img src= "https://www.teleadhesivo.com/es/img/psg011-jpg/folder/products-listado-merchanthover/vinilos-decorativos-paris-saint-germain-football-club.jpg" width = "100" alt="logo" align = "right" >
+                </div>
+            </div>
+        </div>
+
+        <!––Barra de navegación––>    
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link second-text fw-bold" href="dsh.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link  second-text fw-bold" href="pagGastos.html">Gastos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle second-text fw-bold" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user me-2" align="right" ></i>Usuario
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="login.html">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+
+
+        <div class="container">
+            
+            <div class="card shadow-lg">
+                <div  class="row">
+                <div class="col-md-4 mb-4  mt-5" align="center">
+                    <h2>Total Carrito: </h2>
+                    <h2>No. Productos: </h2>
+    
+                </div>
+                <div class = "col-md-4 mb-2 mt-5" >
+                    <h2>$<span id="total"></span></h2>
+                    <h2><span id="totalP"></span></h2>
+                </div>
+                <div class="col-md-4 mb-2  mt-5">
+                    <!––Se manda a llamar la funcion de pagar––>
+                    <button id="boton-vaciar" class="btn btn-outline-dark" onclick="pagar()">Pagar Carrito</button>
+                    <br>
+                    <br>
+                    <button id="boton-reinciar" class="btn btn-outline-dark" onclick="borrarVentas()">Borrar carrito</button>
+                </div>
+            </div>
+            <hr>
+
+            <!––Se agregan los productos que interactuan con la parte de arriba––>
+            <div class="row">
+                <div class="col-md-4 mt-5 mb-4">
+                    <center><h2><span id="totalP1"></span></h2></center>
+                    <img src="https://cdn.shopify.com/s/files/1/0381/5342/0931/products/airforceone3_6229a887-7087-4e05-86e6-5d4a6750eed4_540x.png?v=1619738645" align="right" width = "100" alt="logo">
+                </div>
+                <div class="col-md-4 mb-4  mt-4">
+                    <p class="text-center">Tenis Air Force One (Blanco/Negro)<br>Tallas 23-29 MX<br>$2,299mxn</p>
+                </div>
+                <div class="col-md-4 mb-4  mt-5" >
+                        <button type="button" id="t1" class="btn btn-outline-dark" align="right" onclick="Art1()" >Agregar al carro</button>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-md-4 mt-5 mb-4">
+                    <center><h2><span id="totalP2"></span></h2></center>
+                    <img src="https://hypescrape.com/wp-content/uploads/2021/07/Wethenew-Sneakers-France-Air-Jordan-1-Low-Black-White-Particle-Grey-553558-040-1_1200x_ede93bed-f6b4-4642-b981-c3319d8d91aa.png" align="right" width = "100" alt="logo">
+                </div>
+                <div class="col-md-4 mb-4  mt-4">
+                    <p class="text-center">Air Jordan 1 Low Blanco/Negro<br>Tallas 23-29 MX<br>$6,499mxn</p>
+                </div>
+                <div class="col-md-4 mb-4  mt-5" >
+                        <button type="button" id="t2" class="btn btn-outline-dark" align="right" onclick="Art2()" >Agregar al carro</button>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-md-4 mt-5 mb-4">
+                    <center><h2><span id="totalP3"></span></h2></center>
+                    <img src="https://www.innvictus.com/medias/IN-553558-612-1.jpg?context=bWFzdGVyfGltYWdlc3w4Nzk0NnxpbWFnZS9qcGVnfGltYWdlcy9oOGMvaGNmLzEwNzIyMzIwODQyNzgyLmpwZ3xlYzlhMjUyMTk2MWZjNDc3NjRlNTQ3ZWI5NmQ2MzA5YTQzYjYwNDM3MGJjMjY2ODZiODg3NWU0YzdkYTAwZmJi" align="right" width = "100" alt="logo">
+                </div>
+                <div class="col-md-4 mb-4  mt-4">
+                    <p class="text-center">Air Jordan 1 Mid Armory Navy<br>Tallas 23-29 MX<br>$2,799mxn</p>
+                </div>
+                <div class="col-md-4 mb-4  mt-5" >
+                    <button type="button" class="btn btn-outline-dark" align="right" onclick="Art3()" >Agregar al carro</button>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-md-4 mt-5 mb-4">
+                    <center><h2><span id="totalP4"></span></h2></center>
+                    <img src="https://www.innvictus.com/medias/tenis-nike-air-jordan-1-mid-in-554724-066-1.png?context=bWFzdGVyfGltYWdlc3wxMDIwOTV8aW1hZ2UvcG5nfGltYWdlcy9oMzAvaGM1Lzk4NDk3Njk1MjUyNzgucG5nfGIzZWQ2NWM1ZmFlYWU2MjY2ZDVjMjJkNjhmNjhkNGU0ZDI1ZGYzY2NmMzY2ZWM3NTVjZDJjODE0ZDYzM2Q0MTI" align="right" width = "100" alt="logo">
+                </div>
+                <div class="col-md-4 mb-4  mt-4">
+                    <p class="text-center">Air Jordan 1 Low Bred Toe<br>Tallas 23-29 MX<br>$2,699mxn</p>
+                </div>
+                <div class="col-md-4 mb-4  mt-5" >
+                    <button type="button" id ="t4" class="btn btn-outline-dark" align="right" onclick="Art4()"  >Agregar al carro</button>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-md-4 mt-5 mb-4">
+                    <center><h2><span id="totalP5"></span></h2></center>
+                    <img src="https://www.innvictus.com/medias/IN-DN2158-101-1.jpg?context=bWFzdGVyfGltYWdlc3w3MDI2M3xpbWFnZS9qcGVnfGltYWdlcy9oMTcvaGFmLzEwNjUzMjAzMTY5MzEwLmpwZ3w2YTE4ZWRkMzQ2ZmEwOGRiMjBhNDEwNzRjMzE5YmM5MGZlZjU0MjhiOGRiOGY5NTkxMTFhMDhiMDc5MDI0M2U5" align="right" width = "100" alt="logo">
+                </div>
+                <div class="col-md-4 mb-4  mt-4">
+                    <p class="text-center">Tenis Nike Blazer Low 77<br>Tallas 23-29 MX<br>$2,199mxn</p>
+                </div>
+                <div class="col-md-4 mb-4  mt-5" >
+                    <button type="button" id ="t5" class="btn btn-outline-dark" align="right" onclick="Art5()"  >Agregar al carro</button>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-md-4 mt-5 mb-4">
+                    <center><h2><span id="totalP6"></span></h2></center>
+                    <img src="https://www.innvictus.com/medias/tenis-jordan-1-low-easter-pastel-tie-dye-in-DQ2514-100-1.jpg?context=bWFzdGVyfGltYWdlc3w5MTA0NXxpbWFnZS9qcGVnfGltYWdlcy9oZjkvaDg5LzEwOTIzMjk4NTIxMTE4LmpwZ3wzNDQzNDQ3NTA0N2VmODM0MmU1NjJkNWNhZjY2ZTgzZGQ5ODUzY2NiNDg2NGNkMDUzN2JiMGJlYWIzZjExY2Uz" align="right" width = "100" alt="logo">
+                </div>
+                <div class="col-md-4 mb-4  mt-4">
+                    <p class="text-center">Tenis Air Jordan 1 Low GS Easter Pastel Tie Dye<br>Tallas 23-29 MX<br>$3,699mxn</p>
+                </div>
+                <div class="col-md-4 mb-4  mt-5" >
+                    <button type="button" id ="t6" class="btn btn-outline-dark" align="right" onclick="Art6()"  >Agregar al carro</button>
+                </div>         
+            </div>
+            <hr>
+
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
